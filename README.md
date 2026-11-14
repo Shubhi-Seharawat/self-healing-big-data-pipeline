@@ -243,6 +243,11 @@ It covers:
 - Spark Structured Streaming and record routing.
 
 The evidence document provides a visual record of the implementation and the results obtained during testing.
+### Implementation Evidence
+
+Our implementation evidence document contains screenshots and explanations of the major stages of the project.
+
+[View Group 10 Implementation Evidence (PDF)](evidence/DATA226_Group10_Implementation_Evidence.pdf)
 
 ## 10. Project Status and Future Work
 
