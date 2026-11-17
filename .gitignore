@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.env.*
+spark-warehouse/
+metastore_db/
+derby.log
+.DS_Store
+
+# Project datasets and generated outputs
+data/
+outputs/
+logs/

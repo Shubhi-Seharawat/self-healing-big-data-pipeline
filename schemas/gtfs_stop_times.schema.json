@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GTFS Stop Times Schema",
+  "description": "Validation contract for GTFS stop_times records",
+  "type": "object",
+  "required": [
+    "trip_id",
+    "arrival_time",
+    "departure_time",
+    "stop_id",
+    "stop_sequence"
+  ],
+  "properties": {
+    "trip_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for a GTFS trip"
+    },
+    "arrival_time": {
+      "type": "string",
+      "pattern": "^\\d{1,2}:\\d{2}:\\d{2}$"
+    },
+    "departure_time": {
+      "type": "string",
+      "pattern": "^\\d{1,2}:\\d{2}:\\d{2}$"
+    },
+    "stop_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stop_sequence": {
+      "type": "string",
+      "pattern": "^[1-9]\\d*$"
+    },
+    "pickup_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(|[0-3])$"
+    },
+    "drop_off_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(|[0-3])$"
+    },
+    "stop_headsign": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "shape_dist_traveled": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "timepoint": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
