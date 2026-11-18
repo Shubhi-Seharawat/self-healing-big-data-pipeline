@@ -1,0 +1,6 @@
+
+========== FIVE-FAULT INJECTION RESULTS ==========
+Original records: 387798
+Records after injection: 387803
+Injected fault records: 5
+Output: outputs/p1/faulty_stop_times

@@ -1,0 +1,12 @@
+MongoDB connection successful!
+Database: self_healing_pipeline
+
+Inserted document ID: 6afd0ea7be5af1980889e0a7
+
+RETRIEVED MONGODB RECORD
+-----------------------
+Component: JSON Schema Validation
+Total records: 387798
+Valid records: 387798
+Invalid records: 0
+Status: SUCCESS

@@ -1,0 +1,4 @@
+CONTAINER ID   IMAGE                                   COMMAND                  CREATED        STATUS              PORTS                        NAMES
+410e721a4f70   confluentinc/cp-schema-registry:7.8.0   "/etc/confluent/dock…"   15 hours ago   Up About a minute   127.0.0.1:8081->8081/tcp     data226-schema-registry
+d223b4cbeb98   confluentinc/cp-kafka:7.8.0             "/etc/confluent/dock…"   15 hours ago   Up About a minute   127.0.0.1:9092->9092/tcp     data226-kafka
+13b383f55201   mongo:8.0                               "docker-entrypoint.s…"   15 hours ago   Up 2 minutes        127.0.0.1:27017->27017/tcp   data226-mongodb

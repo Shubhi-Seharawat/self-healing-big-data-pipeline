@@ -1,0 +1,15 @@
+
+========== P2 AUTOMATIC RECOVERY RESULTS ==========
+Input records: 387803
+Quarantined records: 4
+Valid records before deduplication: 387799
+Duplicate records removed: 1
+Recovered records: 387798
+Recovery output: outputs/p2/recovered
+Quarantine output: outputs/p2/quarantine
+
+========== OUTPUT VERIFICATION ==========
+Saved recovered records: 387798
+Saved quarantine records: 4
+Recovered count matches: True
+Quarantine count matches: True

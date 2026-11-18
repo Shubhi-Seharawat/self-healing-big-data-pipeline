@@ -1,0 +1,16 @@
+Starting Schema Registry + Kafka integration test...
+Schema file: /Users/shailipandya/Desktop/self-healing-big-data-pipeline/schemas/gtfs_stop_times.schema.json
+Data file: /Users/shailipandya/Desktop/self-healing-big-data-pipeline/data/gtfs/stop_times.txt
+Kafka broker: localhost:9092
+Schema Registry: http://localhost:8081
+Schema subject: gtfs-stop-times-value
+Kafka topic: gtfs-schema-test
+
+Step 1 completed: JSON Schema loaded successfully.
+Step 2 completed: Connected to Schema Registry.
+Step 3 completed: Schema registered successfully.
+Registered schema ID: 1
+Step 4 completed: Latest schema version retrieved.
+Registered subject: gtfs-stop-times-value
+Schema version: 1
+Schema ID: 1

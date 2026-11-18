@@ -1,0 +1,156 @@
+CONTAINER ID   IMAGE                                   COMMAND                  CREATED        STATUS              PORTS                        NAMES
+410e721a4f70   confluentinc/cp-schema-registry:7.8.0   "/etc/confluent/dock…"   15 hours ago   Up About a minute   127.0.0.1:8081->8081/tcp     data226-schema-registry
+d223b4cbeb98   confluentinc/cp-kafka:7.8.0             "/etc/confluent/dock…"   15 hours ago   Up About a minute   127.0.0.1:9092->9092/tcp     data226-kafka
+13b383f55201   mongo:8.0                               "docker-entrypoint.s…"   15 hours ago   Up 2 minutes        127.0.0.1:27017->27017/tcp   data226-mongodb
+
+========== FIVE-FAULT INJECTION RESULTS ==========
+Original records: 387798
+Records after injection: 387803
+Injected fault records: 5
+Output: outputs/p1/faulty_stop_times
+
+========== P1 FIVE-FAULT DETECTION RESULTS ==========
+Total records processed: 387803
+1. Missing trip_id: 1
+2. Invalid arrival_time: 1
+3. Duplicate groups: 1
+4. Unexpected pickup_type: 1
+5. Invalid stop_sequence: 1
+
+All five detection reports saved under outputs/p1/
+Original source dataset was not modified.
+
+========== P2 AUTOMATIC RECOVERY RESULTS ==========
+Input records: 387803
+Quarantined records: 4
+Valid records before deduplication: 387799
+Duplicate records removed: 1
+Recovered records: 387798
+Recovery output: outputs/p2/recovered
+Quarantine output: outputs/p2/quarantine
+
+========== OUTPUT VERIFICATION ==========
+Saved recovered records: 387798
+Saved quarantine records: 4
+Recovered count matches: True
+Quarantine count matches: True
+
+Starting full-dataset JSON Schema validation...
+Input records: 387,798
+
+FULL DATASET VALIDATION RESULTS
+--------------------------------
+Total records: 387,798
+Valid records: 387,798
+Invalid records: 0
+Validation success: True
+MongoDB connection successful!
+Database: self_healing_pipeline
+
+Inserted document ID: 6afd0ea7be5af1980889e0a7
+
+RETRIEVED MONGODB RECORD
+-----------------------
+Component: JSON Schema Validation
+Total records: 387798
+Valid records: 387798
+Invalid records: 0
+Status: SUCCESS
+
+P1 FAULT DETECTION TO MONGODB
+--------------------------------
+missing_trip_id: 1 records stored
+invalid_arrival_time: 1 records stored
+duplicate_groups: 1 records stored
+unexpected_pickup_type: 1 records stored
+invalid_stop_sequence: 1 records stored
+--------------------------------
+Total fault records stored: 5
+MongoDB collection: detected_faults
+Database: self_healing_pipeline
+
+P2 QUARANTINE TO MONGODB
+--------------------------------
+Input records: 387803
+Quarantined records: 4
+Recovered records: 387798
+Quarantine records stored: 4
+
+P2 RECOVERY SUMMARY STORED
+--------------------------------
+Recovery logs: 1
+Recovery status: SUCCESS
+Database: self_healing_pipeline
+Loading GTFS records...
+Records loaded: 5000
+
+============================================================
+BLOOM FILTER EXPERIMENT
+============================================================
+
+Filter size: 10000
+Hash functions: 3
+Inserted items: 5000
+Positive queries detected: 5000
+True negatives: 2683
+False positives: 2317
+False-positive rate: 46.3400%
+
+Filter size: 25000
+Hash functions: 3
+Inserted items: 5000
+Positive queries detected: 5000
+True negatives: 4536
+False positives: 464
+False-positive rate: 9.2800%
+
+Filter size: 50000
+Hash functions: 5
+Inserted items: 5000
+Positive queries detected: 5000
+True negatives: 4955
+False positives: 45
+False-positive rate: 0.9000%
+
+Filter size: 100000
+Hash functions: 7
+Inserted items: 5000
+Positive queries detected: 5000
+True negatives: 5000
+False positives: 0
+False-positive rate: 0.0000%
+
+============================================================
+LOCALITY-SENSITIVE HASHING EXPERIMENT
+============================================================
+Indexed records: 100
+Candidate record IDs: [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 20, 21, 22, 25, 26, 52, 78]
+
+Candidate similarities:
+Record 0: 0.8333 Jaccard similarity
+Record 26: 0.3750 Jaccard similarity
+Record 52: 0.3750 Jaccard similarity
+Record 78: 0.3750 Jaccard similarity
+Record 2: 0.3000 Jaccard similarity
+Record 4: 0.3000 Jaccard similarity
+Record 6: 0.3000 Jaccard similarity
+Record 8: 0.3000 Jaccard similarity
+Record 11: 0.3000 Jaccard similarity
+Record 13: 0.3000 Jaccard similarity
+Record 25: 0.3000 Jaccard similarity
+Record 3: 0.2000 Jaccard similarity
+Record 5: 0.2000 Jaccard similarity
+Record 7: 0.2000 Jaccard similarity
+Record 9: 0.2000 Jaccard similarity
+Record 10: 0.2000 Jaccard similarity
+Record 12: 0.2000 Jaccard similarity
+Record 14: 0.2000 Jaccard similarity
+Record 17: 0.2000 Jaccard similarity
+Record 20: 0.2000 Jaccard similarity
+Record 21: 0.2000 Jaccard similarity
+Record 22: 0.2000 Jaccard similarity
+
+Comparison summary:
+Exact-search comparisons: 100
+LSH candidate comparisons: 22
+Comparison reduction: 78.00%

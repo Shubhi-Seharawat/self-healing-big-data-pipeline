@@ -1,0 +1,13 @@
+
+P2 QUARANTINE TO MONGODB
+--------------------------------
+Input records: 387803
+Quarantined records: 4
+Recovered records: 387798
+Quarantine records stored: 4
+
+P2 RECOVERY SUMMARY STORED
+--------------------------------
+Recovery logs: 1
+Recovery status: SUCCESS
+Database: self_healing_pipeline

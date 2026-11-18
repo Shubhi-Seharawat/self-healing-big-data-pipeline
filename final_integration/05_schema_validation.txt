@@ -1,0 +1,10 @@
+
+Starting full-dataset JSON Schema validation...
+Input records: 387,798
+
+FULL DATASET VALIDATION RESULTS
+--------------------------------
+Total records: 387,798
+Valid records: 387,798
+Invalid records: 0
+Validation success: True

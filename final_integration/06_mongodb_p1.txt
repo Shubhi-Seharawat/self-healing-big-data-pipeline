@@ -1,0 +1,12 @@
+
+P1 FAULT DETECTION TO MONGODB
+--------------------------------
+missing_trip_id: 1 records stored
+invalid_arrival_time: 1 records stored
+duplicate_groups: 1 records stored
+unexpected_pickup_type: 1 records stored
+invalid_stop_sequence: 1 records stored
+--------------------------------
+Total fault records stored: 5
+MongoDB collection: detected_faults
+Database: self_healing_pipeline
